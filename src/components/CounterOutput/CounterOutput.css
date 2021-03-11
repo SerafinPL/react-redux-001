@@ -1,9 +1,11 @@
 .CounterOutput {
-    width: 100%;
-    background-color: #fa923f;
+    width: 95%;
+    background-color: #55923f;
     color: white;
     font-size: 1.8rem;
     text-align: center;
     padding: 20px 0;
     box-sizing: border-box;
+    border-radius: 5px;
+    margin: 3px 2.5%;
 }

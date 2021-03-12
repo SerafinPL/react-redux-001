@@ -1,3 +1,5 @@
+import * as actionTypes from './actions.js';
+
 
 const initialState = {
 	counter: 1,
@@ -34,7 +36,7 @@ const reducer = (state = initialState, action) => {
 	// }
 	
 	switch (action.type) {
-		case 'INCREMENT':
+		case actionTypes.INCREMENT:
 			// const newState = Object.assign({}, state); //another version of solve problem imutable copy
 			// newState.counter = state.counter + 1;
 			// return newState;
@@ -42,22 +44,22 @@ const reducer = (state = initialState, action) => {
 		 		...state,
 				counter: state.counter + 1
 			} 
-		case 'DECREMENT':
+		case actionTypes.DECREMENT:
 			return{
 		 		...state,
 				counter: state.counter - 1
 			} 
-		case 'ADD':
+		case actionTypes.ADD:
 			return{
 		 		...state,
 				counter: state.counter + action.value
 			} 
-		case 'SUBTRACT':
+		case actionTypes.SUBTRACT:
 			return{
 		 		...state,
 				counter: state.counter - action.value
 			} 
-		case 'STORE_RESULT':{
+		case actionTypes.STORE_RESULT:{
 				
 				console.log(state.results);
 			return{
@@ -67,7 +69,7 @@ const reducer = (state = initialState, action) => {
 
 			}
 		}
-		case 'DELETE_RESULT':{
+		case actionTypes.DELETE_RESULT:{
 			// One WAY
 			// 
 			// const newArray = [...state.results];

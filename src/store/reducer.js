@@ -1,12 +1,13 @@
 
 const initialState = {
-	counter: 1
+	counter: 1,
+	results: []
 }
 
 const reducer = (state = initialState, action) => {
 
 
-	
+
 	// if (action.type === 'INCREMENT'){
 	// 	return{
 	// 		...state,
@@ -34,6 +35,9 @@ const reducer = (state = initialState, action) => {
 	
 	switch (action.type) {
 		case 'INCREMENT':
+			// const newState = Object.assign({}, state); //another version of solve problem imutable copy
+			// newState.counter = state.counter + 1;
+			// return newState;
 			return{
 		 		...state,
 				counter: state.counter + 1
@@ -53,7 +57,14 @@ const reducer = (state = initialState, action) => {
 		 		...state,
 				counter: state.counter - action.value
 			} 
-	}
+		case 'STORE_RESULT':{
+			return{
+				...state,
+				results: state.results.concat({id: new Date(), value: state.counter})
+			}
+		}
+
+	}// switch
 
 	
 	return state;

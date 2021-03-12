@@ -58,10 +58,28 @@ const reducer = (state = initialState, action) => {
 				counter: state.counter - action.value
 			} 
 		case 'STORE_RESULT':{
+				
+				console.log(state.results);
 			return{
+
 				...state,
-				results: state.results.concat({id: new Date(), value: state.counter})
+				results: state.results.concat({id: new Date().getTime(), value: state.counter})
+
 			}
+		}
+		case 'DELETE_RESULT':{
+			// One WAY
+			// 
+			// const newArray = [...state.results];
+			// newArray.splice(id, 1);
+			//
+			//Second WAY
+			
+			let updatedArray = state.results.filter(result => result.id !== action.elementId)
+			return{
+		 		...state,
+				results: updatedArray
+			} 
 		}
 
 	}// switch

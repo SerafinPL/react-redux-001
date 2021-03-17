@@ -14,10 +14,8 @@ const reducer = (state = initialState, action) => {
 				
 				// data changing is possible there
 			return{
-
 				...state,
 				results: state.results.concat({id: new Date().getTime(), value: action.result})
-
 			}
 		}
 		case actionTypes.DELETE_RESULT:{
@@ -27,8 +25,7 @@ const reducer = (state = initialState, action) => {
 			// newArray.splice(id, 1);
 			//
 			//Second WAY
-			
-			let updatedArray = state.results.filter(result => result.id !== action.elementId)
+		let updatedArray = state.results.filter(result => result.id !== action.elementId)
 			return{
 		 		...state,
 				results: updatedArray

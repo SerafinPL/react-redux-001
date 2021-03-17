@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/actions.js';
+import * as actionTypes from '../actions/actionTypes';
 
 
 const initialState = {
@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case actionTypes.STORE_RESULT:{
 				
-				console.log(state.results);
+				// data changing is possible there
 			return{
 
 				...state,

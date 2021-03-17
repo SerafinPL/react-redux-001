@@ -5,9 +5,9 @@ export {
 	decrement,
 	add,
 	subtract
-} from './counter';
+} from './actCreatorsCounter';
 
 export {
 	storeResult,
 	deleteResult
-} from './results';
+} from './actCreatorsResults';

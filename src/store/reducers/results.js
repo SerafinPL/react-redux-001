@@ -5,6 +5,12 @@ const initialState = {
 	results: []
 }
 
+const deleteResult = (state, action) => {
+	const updatedArray = state.results.filter(result => result.id !== action.elementId);
+	return updateObject(state, {results: updatedArray});
+};
+
+
 const reducer = (state = initialState, action) => {
 
 
@@ -25,9 +31,11 @@ const reducer = (state = initialState, action) => {
 			// const newArray = [...state.results];
 			// newArray.splice(id, 1);
 			//
+
 			//Second WAY
-			let updatedArray = state.results.filter(result => result.id !== action.elementId);
-			return updateObject(state, {results: updatedArray});
+			// let updatedArray = state.results.filter(result => result.id !== action.elementId);
+			// return updateObject(state, {results: updatedArray});
+			return deleteResult(state, action);
 			// return{
 		 	// 	...state,
 			// 	results: updatedArray
